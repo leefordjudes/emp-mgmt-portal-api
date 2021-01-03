@@ -5,6 +5,8 @@ nest new emp-mgmt-portal-api
 ## Packages
 
 - npm i @nestjs/mongoose mongoose lodash moment class-validator class-transformer
+- npm i --save @nestjs/serve-static
+
 - npm i @types/lodash @types/moment --save-dev
 - don't install @types/mongoose
 

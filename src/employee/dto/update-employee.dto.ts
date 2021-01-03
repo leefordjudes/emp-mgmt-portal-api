@@ -1,17 +1,17 @@
 import { IsDateString, IsISO8601, IsMongoId, IsNotEmpty, IsOptional, IsString } from 'class-validator';
-import { ISO_8601 } from 'moment';
 
-export class EmployeeDto {
+export class UpdateEmployeeDto {
   @IsString()
-  @IsNotEmpty()
+  @IsOptional()
   name: string;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsMongoId()
   department: string;
 
   @IsISO8601()
   @IsDateString()
+  @IsOptional()
   doj: Date;
 
   @IsOptional()
