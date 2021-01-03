@@ -1,12 +1,13 @@
-import { Controller, Get, Post } from '@nestjs/common';
+import { Controller, Get, Param, Post, Query, Res } from '@nestjs/common';
+import { Response } from 'express';
 import { AppService } from './app.service';
 
-@Controller('app')
+@Controller()
 export class AppController {
   constructor(private readonly appService: AppService) { }
 
-  @Post('create')
-  create() {
-    return this.appService.createDept();
+  @Get('photos/:filename')
+  getPhoto(@Param('filename') filename: string, @Res() res: Response) {
+    return res.sendFile(filename, { root: './photos' });
   }
 }
